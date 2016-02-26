@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<title>Load more</title>
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="http://bootswatch.com/flatly/bootstrap.min.css">
+	<!-- jquery -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+	<!-- angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <!-- app -->
+    <script src="app.js"></script>
+    <style type="text/css">
+    	.content {
+    		background-color:  #90CAF9;
+            color: #212121;
+            font-weight: bold;
+            font-size: 5em;
+            border: 5px solid white;
+            text-align: center;
+            padding: 75px;
+    	}
+    </style>
+</head>
+<body ng-controller="MainCtrl">
+    <!-- ng repeat using limitTo filter to limit the results with our scope called listLimit -->
+	<div ng-repeat="l in list | limitTo: listLimit" class="col-md-4 content">{{l.position}}</div>
+    <div class="clearfix"></div>
+    <hr />
+    <load-more></load-more>
+</body>
+</html>
